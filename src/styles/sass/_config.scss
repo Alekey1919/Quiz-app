@@ -1,0 +1,65 @@
+$primary: #570057;
+$secondary: #00d1b2;
+
+@mixin button {
+  background: none;
+  margin: auto;
+  padding: 5px 15px;
+  border: none;
+  display: block;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  border-bottom: 1px solid $primary;
+
+  &:hover {
+    background: $primary;
+  }
+}
+
+@mixin option {
+  background: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    background: #00d1b2d7;
+  }
+
+  &.answered {
+    cursor: not-allowed;
+
+    &:hover {
+      background: none;
+    }
+
+    &.wrong {
+      background: $primary;
+    }
+
+    &.correct {
+      background: $secondary;
+    }
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $primary;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $secondary;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: darken($secondary, 10);
+}

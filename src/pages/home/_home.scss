@@ -1,0 +1,62 @@
+.home {
+  background-color: #02020234;
+  backdrop-filter: blur(3px);
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 1.5rem;
+  width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+
+  &-title {
+    text-align: center;
+    margin-bottom: 25px;
+  }
+
+  &-config {
+    margin: 25px 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .start,
+  .next {
+    @include button;
+  }
+
+  &-info {
+    margin-top: 50px;
+    text-decoration: underline;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .score > span {
+    margin-left: 5px;
+  }
+
+  .input-container {
+    display: flex;
+    align-items: center;
+  }
+
+  select {
+    background: none;
+    border: none;
+    padding: 5px;
+    margin-left: 15px;
+    width: 100%;
+
+    &:hover {
+      background: $primary;
+    }
+
+    &:focus {
+      background: $primary;
+    }
+
+    option:focus {
+      background-color: $secondary;
+    }
+  }
+}

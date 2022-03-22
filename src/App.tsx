@@ -1,24 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Home from "./pages/home/Home";
+import sound from "./assets/images/sound.png";
+import mute from "./assets/images/mute.png";
+import useApp from "./useApp";
 
 function App() {
+  const { isSoundOn, toggleSound } = useApp();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <button className="sound" onClick={toggleSound}>
+        <img src={isSoundOn ? sound : mute} alt="Hola" />
+      </button>
+      <Home isSoundOn={isSoundOn} />
     </div>
   );
 }
